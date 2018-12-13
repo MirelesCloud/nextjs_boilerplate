@@ -1,4 +1,4 @@
-import { all, takeLatest, call, put } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 import { API_CALL_REQUEST, API_CALL_SUCCESS, API_CALL_FAILURE, API_CALL_FETCHED } from '../actions/giphy';
@@ -26,8 +26,5 @@ export function* fetchImages() {
 }
 
 export default function* giphySaga() {
-  yield all([
-    yield takeLatest(API_CALL_REQUEST, fetchImages),
-    yield call(fetchImages)
-  ]);
+  yield takeLatest(API_CALL_REQUEST, fetchImages)
 }
