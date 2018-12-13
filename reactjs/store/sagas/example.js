@@ -1,4 +1,4 @@
-import { all, select, takeEvery } from 'redux-saga/effects';
+import { select, takeEvery } from 'redux-saga/effects';
 
 /**
  * React on example action being triggered.
@@ -12,7 +12,5 @@ function* exampleSaga() {
  * Main entry point for all example sagas.
  */
 export default function* exampleSagas() {
-  yield all([
-    yield takeEvery('EXAMPLE_ACTION', exampleSaga),
-  ]);
+  yield takeEvery('EXAMPLE_ACTION', exampleSaga)
 }

@@ -5,7 +5,7 @@ import giphySaga from './giphy';
 
 export default function* rootSaga() {
   yield all([
-    ...exampleSagas(),
-    ...giphySaga(),
+    fork(exampleSagas),
+    fork(giphySaga),
   ]);
 }
